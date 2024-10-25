@@ -43,13 +43,13 @@ HEAD
 A continuación, algunas capturas de pantalla de la página GO STAGE:
 
 - **Pantalla Principal (Hero)**  
-  ![Pantalla Principal](assets/images/pprincipal)
+  ![Pantalla Principal](assets/images/pprincipal.png)
 
 - **Sección de Características**  
-  ![Características](assets/images/caracteristicas)
+  ![Características](assets/images/caracteristicas.png)
 
 - **Sección de Planes**  
-  ![Planes](assets/images/planes)
+  ![Planes](assets/images/planes.png)
 
 > Asegúrate de reemplazar `images/captura.png` con la ubicación correcta de tus capturas en el repositorio.
 
