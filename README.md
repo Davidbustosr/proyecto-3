@@ -1,7 +1,3 @@
-HEAD
-
-
-Añadir imágenes de demo y actualizar README.md
 # Proyecto 3: Página Web - GO STAGE
 
 **Descripción**  
@@ -43,15 +39,17 @@ HEAD
 A continuación, algunas capturas de pantalla de la página GO STAGE:
 
 - **Pantalla Principal (Hero)**  
+
   ![Pantalla Principal](assets/images/pprincipal.png)
 
 - **Sección de Características**  
+
   ![Características](assets/images/caracteristicas.png)
 
 - **Sección de Planes**  
+
   ![Planes](assets/images/planes.png)
 
-> Asegúrate de reemplazar `images/captura.png` con la ubicación correcta de tus capturas en el repositorio.
 
 ## Próximas Mejoras
 
@@ -69,7 +67,3 @@ Las contribuciones son bienvenidas. Si deseas mejorar alguna funcionalidad o añ
 3. Crea una nueva **rama** para tu modificación.
 4. Haz un **pull request** detallando tus cambios.
 
-## Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
->>>>>>> Añadir imágenes de demo y actualizar README.md
