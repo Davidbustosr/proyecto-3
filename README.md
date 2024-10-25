@@ -1,6 +1,7 @@
 # Proyecto 3: Página Web - GO STAGE
 
-**Descripción**  
+## Descripción
+
 GO STAGE es una página web que proporciona una herramienta interactiva para la creación de plantillas de sonido personalizables, diseñada para músicos, especialmente pianistas de iglesias y bandas de worship. La interfaz permite elegir entre distintos planes, ajustar combinaciones de sonido mediante faders y explorar plantillas de calidad profesional sin necesidad de conocimientos avanzados de configuración.
 
 ## Funcionalidades Principales
