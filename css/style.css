@@ -1,0 +1,575 @@
+
+body, html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Modelo de caja: incluye padding y border en el tamaño total */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Ajuste de la fuente si es necesario */
+    background: #000000; /* Fondo de color negro sólido */
+    background-image: radial-gradient(circle at top right, #3b0071, #000000 58%);
+    background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
+    height: 100vh; /* Altura de la pantalla completa */
+    margin: 0;
+    padding: 0;
+    background-size: 800% 800%; /* Ajusta si hay una imagen de fondo que necesite este tamaño */
+}
+/* Barra de Navegación */
+/* --------------------------------------------------------------------------------------- */
+.navbar {
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0; /* Inicia en la parte superior de la página */
+    width: 97%; /* Ancho completo de la página */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye espacio entre los elementos */
+    padding: 10px 20px;
+    background-color: #000000; /* Color de fondo */
+    transition: top 0.3s ease; /* Transición suave para mostrar/ocultar la barra */
+    z-index: 1000; /* Asegura que la barra esté encima del contenido */
+}
+
+/* Logo y nombre de la marca */
+.navbar-brand a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #E0E0E0; /* Color del texto */
+    font-size: 17px;
+    font-weight: bold;
+    margin-right: 55px; /* Espacio entre el logo y el menú */
+}
+
+.navbar-brand img {
+    max-height: 85px;
+    margin-right: 1px;
+    height: auto;
+}
+
+.navbar-menu-container {
+    flex-grow: 1; /* Ocupa el espacio restante */
+}
+
+.navbar-menu {
+    list-style: none; /* Elimina las viñetas de la lista */
+    display: inline-flex; /* Permite centrar los elementos horizontalmente */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin: 0 30px; /* Espaciado entre los elementos del menú */
+}
+
+.navbar-menu li a {
+    color: #E0E0E0;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar-menu li a:hover {
+    color: #FFEB3B; /* Color dorado al pasar el ratón */
+}
+
+.boton-registrarse-barra{
+    background-color: #E0E0E0; /* Fondo color morado */
+    color: #000000; /* Texto en color blanco */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 18px; /* Tamaño del texto */
+    border: none; /* Elimina el borde por defecto */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra debajo del botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación al pasar el ratón */
+}
+
+/* hover del boton*/
+.boton-registrarse-barra:hover{
+    background-color: #3700b3; /* Cambia el color de fondo al pasar el ratón */
+    transform: translateY(-2px); /* Eleva ligeramente el botón */
+}
+
+/* Efecto al hacer clic en el botón */
+.boton-registrarse-barra:active {
+    transform: translateY(1px); /* Mueve el botón ligeramente hacia abajo al hacer clic */
+}
+
+/* Estilos Responsivos para la Barra de Navegación en Dispositivos Móviles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu-container {
+        width: 100%;
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .navbar-menu {
+        display: flex;
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: flex-start;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+
+    /* Ajustamos el margen del logo en móviles */
+    .navbar-brand a {
+        margin-right: 0;
+    }
+}
+
+/* Contenedor Hero */
+/* --------------------------------------------------------------------------------------- */
+
+.container-hero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 40px 20px;
+    text-align: left; /* Alinea el texto a la izq */
+    box-sizing: border-box;
+    margin-top: 75px;
+    
+}
+
+.titulo-principal-hero {
+    margin-left: 15px;
+    position: relative;
+    top: 20px;
+    grid-column: 1 / 2;
+    color: #E0E0E0;
+    font-size: 52px;
+    margin-bottom: 40px;
+}
+
+.subtitulo {
+    margin-left: 15px;
+    position: relative;
+    top: -30px;
+    box-sizing: border-box;
+    grid-column: 1 / 2;
+    color: #757575;
+    font-size: 20px;
+    line-height: 1.6; /* Espaciado de línea para mejorar la legibilidad */
+    width: 95%; /* Ancho máximo para limitar la longitud de línea */
+    text-align: left;
+}
+.hero-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    column-gap: 10px; /* Espacio horizontal entre las dos columnas */
+    row-gap: 10px; /* Espacio vertical entre las imágenes */
+    margin-top: -190px; /* Subir el contenedor */
+    position: relative;
+}
+
+.hero-images .image {
+    position: relative;
+    overflow: hidden; /* Asegura que el contenido extra se esconda */
+}
+
+.hero-images img {
+    width: 100%; /* Ajusta el ancho al contenedor */
+    height: 180px; /* Altura fija para mantener el aspecto rectangular */
+    object-fit: cover; /* Mantiene la proporción de la imagen sin distorsión */
+    border-radius: 15px; /* Bordes redondeados */
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3)); /* Difuminado en los bordes */
+}
+
+/* Efecto de difuminado lateral derecho solo en la segunda columna (column 2) */
+.hero-images .image:nth-child(2),
+.hero-images .image:nth-child(4),
+.hero-images .image:nth-child(6) {
+    position: relative;
+}
+
+.hero-images .image:nth-child(2)::before,
+.hero-images .image:nth-child(4)::before,
+.hero-images .image:nth-child(6)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 60px; /* Ajusta el tamaño del área difuminada lateral */
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Gradiente de negro a transparente hacia la izquierda */
+    pointer-events: none; /* Asegura que no interfiera con la interacción del contenido */
+    z-index: 1;
+}
+
+/* Difuminado superior e inferior para todas las imágenes */
+.hero-images .image::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 50px; /* Altura del difuminado superior */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent); /* Gradiente de negro a transparente hacia abajo */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-images .image::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px; /* Altura del difuminado inferior */
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent); /* Gradiente de negro a transparente hacia arriba */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Desplazamiento de la segunda columna */
+.hero-images .image:nth-child(2),
+.hero-images .image:nth-child(4),
+.hero-images .image:nth-child(6) {
+    transform: translateY(-50px); /* Desplaza la segunda columna */
+}
+
+/* CONTENEDOR CARACTERISTICAS */
+/* --------------------------------------------------------------------------------------- */
+
+.container-caracteristicas {
+    background-color: #000000;
+    background-image: radial-gradient(circle at top right, #3b0071, #000000 30%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr; /* La primera fila para el título, la segunda para las columnas */
+    width: 100vw;  /* Ocupa el 100% del ancho de la ventana */
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+   
+    padding: 40px 20px;
+    grid-gap: 5px; /* Espacio entre columnas */
+}
+
+.container-caracteristicas h1 {
+    color: #E0E0E0;
+    font-size: 35px;
+    text-align: center;
+    grid-column: 1 / -1; /* El título ocupará toda la fila (todas las columnas) */
+    margin-bottom: 20px;
+    margin-top: 85px;
+}
+
+.container-caracteristicas h2{
+    font-size: 20px;
+}
+
+.columna {
+    text-align: left; /* Alinea el contenido a la izquierda */
+    padding: 20px; /* Añade espacio interno a las columnas */
+    color: #fff; /* Color del texto */
+    max-width: 80%;
+}
+
+.titulo-principal {
+    color: #E0E0E0;
+    font-size: 25px;
+    text-align: left; /* Alinea el texto en el centro de cada columna */
+    margin-left: 18px;
+}
+
+.descripcion-caracteristicas {
+    color: #757575; /* Color gris claro para diferenciar del título */
+    font-size: 17px; /* Tamaño de fuente */
+    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+    text-align: center; /* Centra el texto en cada columna */
+    padding: 0 20px; /* Padding horizontal para espaciar del borde de la columna */
+    text-align: left;
+    margin-top: 5px;
+}
+
+.imagen-caracteristica {
+    width: 250px; /* Asegura que la imagen ocupe el ancho completo del contenedor */
+    height: 200px;
+    border-radius: 14px; /* Bordes redondeados para un estilo más suave */
+    margin-left: 15px;
+}
+
+/* CONTENEDOR 1° CALL TO ACTION */
+/* --------------------------------------------------------------------------------------- */
+
+.container-texto-explicativo{
+    background-color: #E0E0E0;
+    text-align: center;
+    width: 100%;
+    height: 230px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.titulo-principal-texto-explicativo{
+color: #000000;
+text-align: center;
+font-size: 35px;
+}
+
+.subtitulo-texto-explicativo{
+    color: #3b0071;
+    text-align: center;
+    font-size: 22px;
+}
+
+.boton-para-crear-plantilla{
+    background-color: #000000; /* Fondo color morado */
+    color: #E0E0E0; /* Texto en color blanco */
+    padding: 12px 24px; /* Espaciado interno del botón */
+    font-size: 18px; /* Tamaño del texto */
+    border: none; /* Elimina el borde por defecto */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra debajo del botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación al pasar el ratón */
+}
+
+.boton-para-crear-plantilla:hover{
+    background-color: #3700b3; /* Cambia el color de fondo al pasar el ratón */
+    transform: translateY(-2px); /* Eleva ligeramente el botón */
+}
+
+.boton-para-crear-plantilla:active {
+    transform: translateY(1px); /* Mueve el botón ligeramente hacia abajo al hacer clic */
+}
+
+/* CONTENDOR PLANES */
+/* --------------------------------------------------------------------------------------- */
+/* Contenedor general de la sección planes */
+.container-planes {
+    background-color: #000000;
+    background-image: radial-gradient(circle at top right, #3b0071, #000000 30%);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Ajusta el tamaño de las columnas */
+    grid-template-rows: auto 1fr; /* El título ocupará la primera fila y las tarjetas la segunda */
+    width: 100vw;  /* Ocupa el 100% del ancho de la ventana */
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    grid-gap: 5px; /* Reduce el espacio entre las tarjetas */
+    justify-items: center; /* Centra horizontalmente las tarjetas */
+    align-items: start; /* Alínea las tarjetas hacia el principio del contenedor */
+    padding-top: 110px;
+}
+
+/* Estilo para el título H1 */
+.container-planes h1 {
+    color: #E0E0E0;
+    font-size: 35px;
+    text-align: center;
+    grid-column: 1 / -1; /* El título ocupará toda la fila (todas las columnas) */
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+/* Estilo para cada tarjeta */
+.tarjeta {
+    background-color: #1A1A1A; /* Color de fondo */
+    color: #E0E0E0; /* Texto en color blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(43, 43, 43, 0.2); /* Sombra para darle profundidad */
+    padding: 20px; /* Espacio interno dentro de la tarjeta */
+    display: flex;
+    flex-direction: column; /* Ordena el contenido de arriba hacia abajo */
+    justify-content: space-between; /* Asegura que el botón esté al final */
+    text-align: left;
+    width: 100%; /* Ocupa todo el ancho disponible en su columna */
+    max-width: 300px; /* Ajusta el tamaño máximo de cada tarjeta */
+    height: 70%;
+}
+
+/* Estilo del texto dentro de las tarjetas */
+.tarjeta h2 {
+    font-size: 24px;
+}
+
+.tarjeta h3 {
+    font-size: 32px;
+}
+
+.tarjeta p {
+    font-size: 17px;
+    line-height: 1.5; /* Mejora la legibilidad */
+    color: #B0B0B0; /* Texto de descripción un poco más claro */
+
+}
+
+/* Estilo del botón dentro de la tarjeta */
+.tarjeta button {
+    background-color: #333;
+    color: #E0E0E0;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.tarjeta button:hover {
+    background-color: #555; /* Cambia el color al pasar el ratón */
+}
+
+/* CONTENEDOR 2° CALL TO ACTION */
+/* --------------------------------------------------------------------------------------- */
+
+.contenedor-arriba-testimonios{
+    background-color: #E0E0E0;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.contenedor-arriba-testimonios h1{
+    color: #000000;
+    font-size: 50px;
+}
+
+.contenedor-arriba-testimonios h2{
+    color: #3b0071;
+    font-size: 20px;
+}
+
+/* titulo testimonio contenedor */
+.titulo-testimonios{
+    background-color: #000000;
+    text-align: center;
+}
+
+.titulo-testimonios h1{
+    color: #E0E0E0;
+    font-size: 40px;
+    padding-top: 30px;
+}
+
+/* CONTENEDOR TESTIMONIOS */
+/* --------------------------------------------------------------------------------------- */
+
+.container-testimonios{
+   padding-top: 140px;
+    background-color: #000000;
+    display: flex; /* Usamos Flexbox para organizar las tarjetas en fila */
+    justify-content: space-around; /* Espaciado entre las tarjetas */
+    gap: 35px; /* Espacio entre tarjetas */
+    margin: 0 auto; /* Centra el contenedor */
+    width: 90vw;  /* Ocupa el 100% del ancho de la ventana */
+    height: 60vh; /* Ocupa el 100% de la altura de la ventana */
+    margin-bottom: 100px;
+
+}
+
+.container-testimonios h1{
+    position: relative;
+    top: 20px;
+    color: #E0E0E0;
+    font-size: 45px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.tarjeta-testimonio {
+    background-color: #1A1A1A; /* Color de fondo similar al que me mostraste */
+    color: #E0E0E0; /* Texto en color blanco */
+    padding: 20px;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(43, 43, 43, 0.2); /* Sombra para darle profundidad */
+    width: 35%; /* Cada tarjeta ocupa un 30% del ancho del contenedor */
+    display: flex;
+    flex-direction: column; /* Ordena el contenido de arriba hacia abajo */
+    justify-content: space-between; /* Asegura que el botón esté al final */
+    text-align: left;
+    height: 550px;
+}
+
+.tarjeta-testimonio h2 {
+    font-size: 22px;
+}
+
+.tarjeta-testimonio h3 {
+    font-size: 14px;
+
+}
+
+.tarjeta-testimonio p {
+    font-size: 16px;
+    line-height: 1.5; /* Mejora la legibilidad */
+    color: #B0B0B0; /* Texto de descripción un poco más claro */
+    margin-bottom: 55px;
+}
+
+/* CONTENEDOR 3° CALL TO ACTION */
+/* --------------------------------------------------------------------------------------- */
+
+.container-call-to-action-final{
+    margin-top: 70px;
+    background-color: #000000;
+    text-align: center;
+}
+
+.container-call-to-action-final h1 {
+    color: #E0E0E0;
+    font-size: 50px;
+}
+
+/* boton para crear la plantilla */
+.boton-call-to-action-final{
+    background-color: #E0E0E0; /* Fondo color morado */
+    color: #000000; /* Texto en color blanco */
+    padding: 12px 24px; /* Espaciado interno del botón */
+    font-size: 18px; /* Tamaño del texto */
+    border: none; /* Elimina el borde por defecto */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra debajo del botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación al pasar el ratón */
+}
+
+/* hover del boton*/
+.boton-call-to-action-final:hover{
+    background-color: #3700b3; /* Cambia el color de fondo al pasar el ratón */
+    transform: translateY(-2px); /* Eleva ligeramente el botón */
+}
+
+/* Efecto al hacer clic en el botón */
+.boton-call-to-action-final:active {
+    transform: translateY(1px); /* Mueve el botón ligeramente hacia abajo al hacer clic */
+}
+
+/* Pie de Página */
+/* -------------------------------------------------- */
+
+/* Estilos para el footer */
+.footer {
+    background-color: #000;
+    color: #E0E0E0;
+    text-align: center;
+    padding: 20px;
+    padding-top: 250px;
+}
+
+.footer .footer-policies {
+    margin-bottom: 10px;
+}
+
+.footer .footer-policies a {
+    color: #E0E0E0;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer .footer-policies a:hover {
+    text-decoration: underline;
+}
+
+.footer .footer-reserved {
+    font-size: 14px;
+}
